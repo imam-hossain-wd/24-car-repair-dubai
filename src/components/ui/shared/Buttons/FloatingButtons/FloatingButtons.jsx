@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Phone, MessageCircle, NotebookPen, ArrowUp } from "lucide-react"
 import { useEffect, useState } from "react"
-import { BookAppointmentButton } from "../BookingAppointmentButton/BookingAppointmentButton"
+
 import Link from "next/link"
 
 export function FloatingButtons() {

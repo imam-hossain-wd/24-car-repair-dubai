@@ -192,7 +192,7 @@ export default function HeroBanner() {
       </div>
       
       {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-4 py-20 lg:py-28">
+      <div className="relative z-10 container mx-auto px-4 py-20 lg:py-18">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Column - Text Content */}
@@ -270,7 +270,7 @@ export default function HeroBanner() {
       </div>
 
       {/* Location Indicator */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-2 px-4 py-2 bg-[#1F2937] backdrop-blur-sm rounded-full border border-white/10">
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-2 px-4 py-2 bg-[#1F2937] backdrop-blur-sm rounded-full border border-white/10 mt-2">
         <MapPin className="h-4 w-4 text-amber-400" />
         <span className="text-sm">Serving All Dubai Areas</span>
       </div>

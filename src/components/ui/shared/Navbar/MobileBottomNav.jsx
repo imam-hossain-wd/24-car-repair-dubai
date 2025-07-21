@@ -65,23 +65,23 @@ import Link from "next/link";
 export function MobileBottomNav() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t">
-      <div className="flex h-14">
-        {/* Call Now Button */}
+      <div className="flex h-12 w-full">
+        {/* Call Now Button - 50% width */}
         <Link
           href="tel:+971506695990"
-          className="flex-1 flex flex-col items-center justify-center bg-primary text-white font-medium"
+          className="w-1/2 flex flex gap-3 items-center justify-center bg-primary text-white font-medium hover:bg-primary/90 transition-colors"
         >
           <Phone className="h-5 w-5 mb-1" />
-          <span className="text-xs">Call Now</span>
+          <span className="text-sm">Call Now</span>
         </Link>
         
-        {/* WhatsApp Button */}
+        {/* WhatsApp Button - 50% width */}
         <Link
           href="https://wa.me/971506695990"
-          className="flex-1 flex flex-col items-center justify-center bg-[#25D366] text-white font-medium"
+          className="w-1/2 flex gap-3 items-center justify-center bg-[#25D366] text-white font-medium hover:bg-[#25D366]/90 transition-colors"
         >
           <MessageCircle className="h-5 w-5 mb-1" />
-          <span className="text-xs">WhatsApp</span>
+          <span className="text-sm">WhatsApp</span>
         </Link>
       </div>
     </div>
