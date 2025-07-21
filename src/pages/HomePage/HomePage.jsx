@@ -20,6 +20,8 @@ import Script from 'next/script'
 import ServicesSection from '@/components/Services'
 import GMBReviews from '@/components/view/GmbReviews/GmbReviews'
 import ServiceAreas from '@/components/view/ServiceArea/ServiceAreas'
+import ModernHeroBanner from '@/components/view/Home/HomeBanner/HomeBanner'
+import HeroBanner from '@/components/view/Home/HomeBanner/HomeBanner'
 
 
 
@@ -51,7 +53,7 @@ export default function HomePage() {
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
                 />
             )}
-            <HomeBanner />
+            <HeroBanner />
             {/* <PremiumServiceSlider /> */}
             <ServicesSection />
             {/* <FeaturedServices /> */}

@@ -39,7 +39,7 @@ export function Footer() {
             <Link href="/" className="flex flex-col gap-3 hover:opacity-90 transition-opacity">
               <div className="relative w-20 h-20">
                 <Image
-                  src={bandlogo.logo3}
+                  src={bandlogo.logo}
                   fill
                   alt={`${FootersiteConfig.name} Logo`}
                   className="object-contain"
