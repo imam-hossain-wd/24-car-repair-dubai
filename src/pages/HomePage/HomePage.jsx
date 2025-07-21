@@ -63,7 +63,7 @@ export default function HomePage() {
             <TrustedService />
             {/* <BlogPage /> */}
             <HomeBlogCarousel />
-            {/* <WhoWeAre /> */}
+            <WhoWeAre />
             {/* <GetTouch /> */}
             <MapComponent />
             {/* <GMBReviews /> */}

@@ -6,6 +6,7 @@ import MapComponent from '@/components/ui/shared/Map/MapComponent'
 import { WhatsAppButton } from '@/components/ui/shared/Buttons/WhatsAppButton/WhatsAppButton'
 import { CallNowButton } from '@/components/ui/shared/Buttons/CallNowButton/CallNowButton'
 import ServiceAreas from '@/components/view/ServiceArea/ServiceAreas'
+import { Mail, MessageSquare, Phone } from 'lucide-react'
 
 export default function ContactPage() {
   const pageTitle = "Contact 24 Car Service Dubai | 24/7 Car Help";
@@ -27,36 +28,76 @@ export default function ContactPage() {
 
       <div className="bg-white">
         {/* Enhanced Hero Section */}
-        <section className="relative h-[50vh] md:h-[70vh] min-h-[200px] w-full overflow-hidden">
-          {/* Background Image with Parallax Effect */}
-          <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dmzcvexar/image/upload/v1752751674/24_car_service_contact_us_y2xjdv.webp')] bg-cover bg-center bg-no-repeat scale-110 animate-zoom-in-out"></div>
+<section className="relative w-full h-[400px] bg-gradient-to-br from-[#003053] to-[#0066CC] overflow-hidden flex items-center">
+  {/* Decorative elements - smaller for mobile */}
+  <div className="absolute top-0 right-0 w-32 h-32 sm:w-40 sm:h-40 md:w-64 md:h-64 bg-[#B91C1C]/10 rounded-full blur-xl sm:blur-2xl md:blur-3xl -mr-16 sm:-mr-20 md:-mr-32 -mt-16 sm:-mt-20 md:-mt-32"></div>
+  <div className="absolute bottom-0 left-0 w-32 h-32 sm:w-40 sm:h-40 md:w-64 md:h-64 bg-white/10 rounded-full blur-xl sm:blur-2xl md:blur-3xl -ml-16 sm:-ml-20 md:-ml-32 -mb-16 sm:-mb-20 md:-mb-32"></div>
+  
+  {/* Grid pattern overlay */}
+  <div className="absolute inset-0 opacity-10 bg-[url('/images/grid-pattern.svg')] bg-cover"></div>
 
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+  <div className="container relative z-10 h-full flex items-center">
+    <div className="max-w-4xl mx-auto text-center px-4 space-y-2 sm:space-y-3 md:space-y-4 w-full">
+      {/* Badge - smaller */}
+      <div className="inline-flex items-center gap-1 px-3 py-1 sm:px-4 sm:py-1.5 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 animate-fade-in">
+        <Phone className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+        <span className="text-xs sm:text-sm font-medium text-white tracking-wider">24/7 SUPPORT</span>
+      </div>
 
-          {/* Content */}
-          <div className="container relative z-10 flex h-full flex-col items-center justify-center text-center px-4">
-            <div className="max-w-4xl space-y-2">
-              <h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-6xl animate-fade-in-up">
-                Contact Our <span className="text-primary">Car Experts</span>
-              </h1>
-              <p className="mt-2 w-[90%] text-xl text-white/90 sm:text-2xl md:max-w-3xl mx-auto animate-fade-in-up delay-100">
-                24/7 professional support for all your vehicle needs across Dubai
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 mt-4 animate-fade-in-up delay-200">
-                {/* <Button size="lg" className="bg-primary hover:bg-primary/90">
-                  <Phone className="w-5 h-5 mr-2" /> Call Now
-                </Button> */}
-                <CallNowButton />
-                {/* <Button size="lg" variant="outline" className="text-white border-white text-black hover:bg-white/10">
-                  <Mail className="w-5 h-5 mr-2" /> Email Us
-                </Button> */}
-                <WhatsAppButton />
-              </div>
+      {/* Main heading - responsive sizing */}
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white animate-fade-in-up leading-snug sm:leading-tight">
+        Contact Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-white">Car Experts</span>
+      </h1>
+
+      {/* Subheading - smaller */}
+      <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-3xl mx-auto animate-fade-in-up delay-100 px-2">
+        Professional vehicle assistance across Dubai
+      </p>
+
+      {/* Contact methods - compact responsive grid */}
+      <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mt-4 sm:mt-6 animate-fade-in-up delay-200">
+        {/* Phone card */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 border border-white/20 hover:border-amber-400/50 transition-all">
+          <div className="flex flex-col items-center gap-1 sm:gap-2">
+            <div className="p-1.5 sm:p-2 rounded-full bg-[#003053]/20">
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-amber-300" />
             </div>
+            <h3 className="text-xs sm:text-sm md:text-base font-semibold text-white">Call Us</h3>
+            <a href="tel:+971506695990" className="text-xs sm:text-sm md:text-base font-bold text-white hover:text-amber-300 transition-colors">
+              +971 50 669 5990
+            </a>
           </div>
+        </div>
 
-        </section>
+        {/* WhatsApp card */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 border border-white/20 hover:border-green-400/50 transition-all">
+          <div className="flex flex-col items-center gap-1 sm:gap-2">
+            <div className="p-1.5 sm:p-2 rounded-full bg-green-500/20">
+              <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+            </div>
+            <h3 className="text-xs sm:text-sm md:text-base font-semibold text-white">WhatsApp</h3>
+            <a href="https://wa.me/971506695990" className="text-xs sm:text-sm md:text-base font-bold text-white hover:text-green-400 transition-colors">
+              Chat Now
+            </a>
+          </div>
+        </div>
+
+        {/* Email card */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 border border-white/20 hover:border-blue-400/50 transition-all">
+          <div className="flex flex-col items-center gap-1 sm:gap-2">
+            <div className="p-1.5 sm:p-2 rounded-full bg-blue-500/20">
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+            </div>
+            <h3 className="text-xs sm:text-sm md:text-base font-semibold text-white">Email</h3>
+            <a href="mailto:24carrepairdubai@gmail.com" className="text-[10px] sm:text-xs md:text-sm font-bold text-white hover:text-blue-400 transition-colors break-all">
+              24carrepairdubai@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
         <GetTouch />
