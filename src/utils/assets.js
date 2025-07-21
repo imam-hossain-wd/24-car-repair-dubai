@@ -1,5 +1,5 @@
 import whoweare from '../assets/images/Who we are.jpg';
-import logo from '../assets/logo/main-logo.png';
+import logo from '../assets/logo/car-maintenance.png';
 import appointment from '../assets/homeicons/appointment.png';
 import car from '../assets/homeicons/car.png';
 import company from '../assets/homeicons/company.png';

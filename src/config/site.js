@@ -1,5 +1,5 @@
 export const FootersiteConfig = {
-    name: "24 Car Service Dubai",
+    name: "24 Car Repair Dubai",
     description: "Your On-Demand Car Savior Anywhere, Anytime in Dubai!",
     url: "https://24carservicedubai.com",
     services: [
@@ -18,9 +18,9 @@ export const FootersiteConfig = {
 
 
   export const siteConfig = {
-    name: "24CarServiceDubai",
+    name: "24 Car Repair Dubai",
     description: "Your On-Demand Car Savior Anywhere, Anytime!",
-    url: "https://24carservicedubai.com",
+    url: "https://24carrepairdubai.com",
     links: {
       twitter: "#",
       facebook: "#",

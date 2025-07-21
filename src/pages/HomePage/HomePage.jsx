@@ -22,6 +22,7 @@ import GMBReviews from '@/components/view/GmbReviews/GmbReviews'
 import ServiceAreas from '@/components/view/ServiceArea/ServiceAreas'
 import ModernHeroBanner from '@/components/view/Home/HomeBanner/HomeBanner'
 import HeroBanner from '@/components/view/Home/HomeBanner/HomeBanner'
+import HomeBlogCarousel from '@/components/view/Home/BlogCarousel/HomeBlogCarousel'
 
 
 
@@ -60,7 +61,8 @@ export default function HomePage() {
             {/* <GalleryCarousel />
             <VideoSlider /> */}
             <TrustedService />
-            <BlogPage />
+            {/* <BlogPage /> */}
+            <HomeBlogCarousel />
             {/* <WhoWeAre /> */}
             {/* <GetTouch /> */}
             <MapComponent />

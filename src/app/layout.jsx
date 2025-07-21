@@ -23,8 +23,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Best Car Repair and Services in Dubai || 24 Car Service Dubai",
-  description: "One of the best car repair and servicing company in dubai || 24 Car Service Dubai",
+  title: "Premium Car Repair Across Dubai || 24 Car Repair Dubai",
+  description: "One of the best car repair and servicing company in dubai || 24 Car Repair Dubai",
   verification: {
     google: "0EZ3v7hLpAZDBl4powBmsZpjU6-masTneZBr6-Q8G3g"
   }
