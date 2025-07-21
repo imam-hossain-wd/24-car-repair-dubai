@@ -19,7 +19,7 @@ export default function FeaturedServices() {
             Professional automotive solutions tailored for Dubai's climate and driving conditions
           </p>
         </div>
-      <ServicesGrid services={servicesData.services} />
+      {/* <ServicesGrid services={servicesData.services} /> */}
     </div>
   );
 }
