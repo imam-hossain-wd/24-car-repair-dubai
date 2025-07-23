@@ -3,8 +3,15 @@ import React from 'react'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { Button } from "@/components/ui/button";
 import { Card , CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { SiteConfig } from '@/config/site';
 
 export default function GetTouch() {
+
+  const {
+    email,
+    phoneNumber,
+    location,
+  } = SiteConfig;
   return (
     <section className="py-8 md:py-12 bg-gradient-to-b from-gray-50 to-white">
     <div className="container mx-auto">
@@ -24,7 +31,7 @@ export default function GetTouch() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Our Location</h3>
-                <p className="text-gray-600">Al Mankhool , Dubai , UAE</p>
+                <p className="text-gray-600">{location}</p>
               </div>
             </div>
             
@@ -34,7 +41,7 @@ export default function GetTouch() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Email Us</h3>
-                <p className="text-gray-600">24carservicedubai@gmail.com</p>
+                <p className="text-gray-600">{email}</p>
               </div>
             </div>
             
@@ -44,7 +51,7 @@ export default function GetTouch() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Call Us</h3>
-                <p className="text-gray-600">+971 54 569 5980 (24/7 Support)</p>
+                <p className="text-gray-600">{phoneNumber} (24/7 Support)</p>
               </div>
             </div>
           </div>

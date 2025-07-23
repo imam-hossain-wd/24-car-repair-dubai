@@ -8,41 +8,39 @@ import {
   Phone,
   Mail,
   MapPin,
-  Facebook,
-  Instagram,
-  Youtube,
-  Twitter,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Image from "next/image";
-import { BookAppointmentButton } from "../Buttons/BookingAppointmentButton/BookingAppointmentButton";
+import { SiteConfig } from "@/config/site";
 import { bandlogo } from "@/utils/assets";
+import Logo from "../Logo/Logo";
 
-const navItems = [
-  { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
-  { name: "Blog", href: "/blog" },
-  { name: "Gallery", href: "/gallery" },
-];
 
-const socialLinks = [
-  { name: "Facebook", icon: Facebook, href: "#" },
-  { name: "Instagram", icon: Instagram, href: "#" },
-  { name: "Twitter", icon: Twitter, href: "#" },
-  { name: "YouTube", icon: Youtube, href: "#" },
-];
+
+
+const {
+  authorName,
+  email,
+  phoneNumber,
+  location,
+  socialLinks,
+  navItems
+} = SiteConfig; `
+
+`
+
 
 export function Navbar() {
-  const pathname = usePathname();
 
+
+  const pathname = usePathname();
+  // backdrop-blur supports-[backdrop-filter]:bg-background/60
   return (
     <>
       {/* Main Navbar */}
-      <header className="sticky top-0 z-50 border-b w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 border-b w-full border-b bg-background/10 backdrop-blur supports-[backdrop-filter]:bg-background/90 ">
 
         {/* Top Contact Bar - Hidden on mobile */}
         <div className="hidden md:block border-b bg-primary/10 text-sm">
@@ -50,15 +48,15 @@ export function Navbar() {
             <div className="flex items-center gap-4">
               <Link href="tel:+971506695990" className="flex items-center gap-1 hover:underline">
                 <Phone className="h-4 w-4 text-primary" />
-                <span>+971 50 669 5990</span>
+                <span>{phoneNumber}</span>
               </Link>
               <Link href="mailto:24carrepairdubai@gmail.com" className="flex items-center gap-1 hover:underline">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>24carrepairdubai@gmail.com</span>
+                <span>{email}</span>
               </Link>
               <div className="flex items-center gap-1">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>Dubai, UAE (24/7 Mobile Service)</span>
+                <span>{location}</span>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -79,35 +77,12 @@ export function Navbar() {
         <div className="container  mx-auto flex h-20 items-center justify-between px-4 sm:px-6">
           {/* Mobile Contact Info + Logo */}
           <div className="flex items-center gap-4 md:hidden">
-            <Link href="/" className="hidden md:flex flex-col justify-center items-center">
-              <Image
-                className="w-12 h-12"
-                src={bandlogo?.logo}
-                quality={100}
-                width={1000}
-                height={1000}
-                alt="24 car service dubai band logo"
-              />
-
-              <h2 className="text-primary text-xs italic">24 Car Repair Dubai</h2>
-
-            </Link>
+        
           </div>
 
           {/* Desktop Logo (centered) */}
-          <Link href="/" className="hidden md:flex flex-col justify-center items-center">
-            <Image
-              className="w-12 h-12"
-              src={bandlogo?.logo}
-              quality={100}
-              width={1000}
-              height={1000}
-              alt="24 car service dubai band logo"
-            />
 
-            <h2 className="text-primary text-xs italic">24 Car Repair Dubai</h2>
-
-          </Link>
+          <Logo />
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-8 md:flex">
@@ -153,14 +128,12 @@ export function Navbar() {
                     <Link href="/" className="hidden md:flex flex-col justify-center items-center">
                       <Image
                         className="w-12 h-12"
-                        src={bandlogo?.logo}
+                        src={bandlogo.logo1}
                         quality={100}
                         width={1000}
                         height={1000}
                         alt="24 car service dubai band logo"
                       />
-
-                      <h2 className="text-primary text-xs italic">24 Car Repair Dubai</h2>
 
                     </Link>
                   </div>

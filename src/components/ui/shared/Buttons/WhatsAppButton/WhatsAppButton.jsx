@@ -9,6 +9,7 @@ function cn(...classes) {
 
 
 export function WhatsAppButton({ className = "", ...props }) {
+  
   return (
     <Button
       asChild
@@ -20,7 +21,7 @@ export function WhatsAppButton({ className = "", ...props }) {
       {...props}
     >
       <a
-        href="https://wa.me/971545695980"
+        href="https://wa.me/971506695990"
         target="_blank"
         rel="noopener noreferrer"
       >

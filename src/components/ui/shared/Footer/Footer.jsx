@@ -1,52 +1,46 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, ChevronDown } from "lucide-react";
-import { FootersiteConfig } from "@/config/site";
+import { SiteConfig } from "@/config/site";
 import { bandlogo } from "@/utils/assets";
+import Logo from "../Logo/Logo";
 
 export function Footer() {
-  const locations = [
-    "Al Mankhool, Dubai",
-    "Al Karama, Dubai", 
-    "Al Satwa, Dubai",
-    "Jumeirah, Dubai",
-    "Al Barsha, Dubai",
-    "Downtown Dubai"
-  ];
 
-  const services = [
-    "Car Battery Replacement",
-    "Brake Pad Repair",
-    "AC Repair & Service",
-    "Engine Diagnostics",
-    "Oil Change Service",
-    "Radiator Repair",
-    "Transmission Service"
-  ];
+
+  const {
+    authorName,
+    brandName,
+    url,
+    description,
+    phoneNumber,
+    phoneAction,
+    location,
+    serviceAreas,
+    services,
+    footerhrefs,
+    socialLinks,
+    email
+  } = SiteConfig;
 
   return (
     <footer className="bg-[#003053] text-white">
       <div className="container mx-auto px-4 py-12">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          
+
           {/* Brand Column */}
-          <div className="space-y-4">
-            <Link href="/" className="inline-block">
-              <div className="relative w-24 h-24">
-                <Image
-                  src={bandlogo.logo}
-                  fill
-                  alt={`${FootersiteConfig.name} Logo`}
-                  className="object-contain"
-                />
-              </div>
-            </Link>
-            
-            <p className="text-sm text-white/80">
+          <div className="-mt-5 mb-4">
+
+
+            <div className="">
+              <Logo />
+            </div>
+
+            <p className="text-sm text-white/80 ">
               Dubai's premier mobile car repair service, delivering expert solutions 24/7.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3 mt-4">
               <div className="flex items-start gap-3">
@@ -56,7 +50,7 @@ export function Footer() {
                     href="tel:+971506695990"
                     className="text-sm font-medium hover:text-amber-400 transition-colors"
                   >
-                    +971 50 669 5990
+                    {phoneNumber}
                   </Link>
                   <p className="text-xs text-white/60 mt-1">24/7 Emergency Support</p>
                 </div>
@@ -68,7 +62,7 @@ export function Footer() {
                   href="mailto:24carrepairdubai@gmail.com"
                   className="text-sm font-medium hover:text-amber-400 transition-colors"
                 >
-                  24carrepairdubai@gmail.com
+                  {email}
                 </Link>
               </div>
 
@@ -86,11 +80,11 @@ export function Footer() {
               {services.map((service, index) => (
                 <Link
                   key={index}
-                  href={`/services/${service.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={service.href}
                   className="text-sm text-white/80 hover:text-amber-400 transition-colors flex items-start gap-2"
                 >
                   <span className="inline-block w-1 h-1 mt-2 rounded-full bg-amber-400"></span>
-                  {service}
+                  {service.title}
                 </Link>
               ))}
             </nav>
@@ -100,7 +94,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-bold border-b border-white/20 pb-2">Service Areas</h3>
             <div className="grid grid-cols-1 gap-2">
-              {locations.map((location, index) => (
+              {serviceAreas.map((location, index) => (
                 <div key={index} className="flex items-start gap-2">
                   <span className="inline-block w-1 h-1 mt-2 rounded-full bg-amber-400"></span>
                   <span className="text-sm text-white/80">{location}</span>
@@ -113,7 +107,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-bold border-b border-white/20 pb-2">Company</h3>
             <nav className="space-y-2">
-              {FootersiteConfig.footerLinks.map((link) => (
+              {footerhrefs.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -124,38 +118,28 @@ export function Footer() {
                 </Link>
               ))}
             </nav>
-            
+
             {/* Social Links */}
             <div className="flex gap-3 pt-4">
-              <Link
-                href="#"
-                aria-label="Facebook"
-                className="p-2 bg-white/10 rounded-full hover:bg-amber-500 hover:bg-opacity-20 transition-all"
-              >
-                <Facebook className="h-5 w-5" />
-              </Link>
-              <Link
-                href="#"
-                aria-label="Instagram"
-                className="p-2 bg-white/10 rounded-full hover:bg-amber-500 hover:bg-opacity-20 transition-all"
-              >
-                <Instagram className="h-5 w-5" />
-              </Link>
-              <Link
-                href="#"
-                aria-label="Twitter"
-                className="p-2 bg-white/10 rounded-full hover:bg-amber-500 hover:bg-opacity-20 transition-all"
-              >
-                <Twitter className="h-5 w-5" />
-              </Link>
+              {socialLinks.map(({ name, icon: Icon, href }) => (
+                <Link
+                  key={name}
+                  href={href}
+                  aria-label={name}
+                  className="p-2 bg-white/10 rounded-full hover:bg-amber-500 hover:bg-opacity-20 transition-all"
+                >
+                  <Icon className="h-5 w-5" />
+                </Link>
+              ))}
             </div>
+
           </div>
         </div>
 
         {/* Copyright Section */}
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-white/60">
-            © {new Date().getFullYear()} {FootersiteConfig.name}. All rights reserved.
+            © {new Date().getFullYear()} {brandName}. All rights reserved.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <Link href="/privacy-policy" className="text-xs text-white/60 hover:text-amber-400 transition-colors">

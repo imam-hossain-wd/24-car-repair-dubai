@@ -3,10 +3,9 @@ import GetTouch from '@/components/view/GetTouch/GetTouch'
 import { getContactPageSchema } from '@/schemas/contactPageSchema'
 import { SeoHead } from '@/seo/SeoHead'
 import MapComponent from '@/components/ui/shared/Map/MapComponent'
-import { WhatsAppButton } from '@/components/ui/shared/Buttons/WhatsAppButton/WhatsAppButton'
-import { CallNowButton } from '@/components/ui/shared/Buttons/CallNowButton/CallNowButton'
 import ServiceAreas from '@/components/view/ServiceArea/ServiceAreas'
 import { Mail, MessageSquare, Phone } from 'lucide-react'
+import { SiteConfig } from '@/config/site'
 
 export default function ContactPage() {
   const pageTitle = "Contact 24 Car Service Dubai | 24/7 Car Help";
@@ -89,8 +88,8 @@ export default function ContactPage() {
               <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
             </div>
             <h3 className="text-xs sm:text-sm md:text-base font-semibold text-white">Email</h3>
-            <a href="mailto:24carrepairdubai@gmail.com" className="text-[10px] sm:text-xs md:text-sm font-bold text-white hover:text-blue-400 transition-colors break-all">
-              24carrepairdubai@gmail.com
+            <a href={`mailto:${SiteConfig.email}`} className="text-[10px] sm:text-xs md:text-sm font-bold text-white hover:text-blue-400 transition-colors break-all">
+              {SiteConfig.email}
             </a>
           </div>
         </div>
@@ -104,7 +103,7 @@ export default function ContactPage() {
 
 
         {/* service areas */}
-        <ServiceAreas />
+        {/* <ServiceAreas /> */}
         {/* service areas */}
 
 

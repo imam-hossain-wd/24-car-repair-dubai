@@ -430,6 +430,7 @@ import {
   Gauge
 } from 'lucide-react';
 import ServiceCard from '@/components/view/Card/ServiceCard';
+import NotFound from '@/app/not-found';
 
 export async function generateMetadata({ params }) {
   const service = services.find(s => s.slug === params.slug);
@@ -446,7 +447,7 @@ export default function ServiceDetailsPage({ slug }) {
   ) 
 
   if (!service) {
-    return notFound()
+    return NotFound()
   }
 
   // const service = services.find(s => s.slug === params.slug);
