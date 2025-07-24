@@ -151,110 +151,111 @@ export function WhoWeAre() {
   ];
 
   return (
-    <section className="py-20 bg-white dark:bg-[#1F2937] overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#003053]/10 rounded-full blur-3xl"></div>
-      
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Image Section */}
-          <div className="relative group">
-            {/* Background shape */}
-            <div className="absolute -inset-4 bg-gradient-to-br from-[#003053]/10 to-[#B91C1C]/10 rounded-3xl transform rotate-1 scale-95 group-hover:rotate-0 transition-all duration-500"></div>
-            
-            {/* Main image */}
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl aspect-[4/3]">
-              <Image
-                src={whoweare}
-                alt="24 Car Service Dubai professional team"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                quality={100}
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              
-              {/* Experience badge */}
-              <div className="absolute top-6 left-6 bg-white dark:bg-gray-900 px-4 py-2 rounded-full shadow-md flex items-center gap-2">
-                <Wrench className="h-5 w-5 text-[#003053] dark:text-white" />
-                <span className="font-bold text-sm">Since 2010</span>
-              </div>
-              
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
-                <div className="text-white">
-                  <p className="text-sm font-medium">Our certified technicians</p>
-                  <h3 className="text-xl font-bold mt-1">Ready to Serve You 24/7</h3>
-                </div>
-              </div>
-            </div>
+    <section className="py-20 bg-white dark:bg-[#1F2937] overflow-hidden relative">
+  {/* Decorative elements */}
+  <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#003053]/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Image Section */}
+      <div className="relative group">
+        {/* Background shape */}
+        <div className="absolute -inset-4 bg-gradient-to-br from-[#003053]/10 to-[#B91C1C]/10 rounded-3xl transform rotate-1 scale-95 group-hover:rotate-0 transition-all duration-500"></div>
+
+        {/* Main image */}
+        <div className="relative overflow-hidden rounded-2xl shadow-2xl sm:aspect-[4/3] aspect-[16/9]">
+          <Image
+            src={whoweare}
+            alt="24 Car Service Dubai professional team"
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            quality={100}
+            priority
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+
+          {/* Experience badge */}
+          <div className="absolute top-6 left-6 bg-white dark:bg-gray-900 px-4 py-2 rounded-full shadow-md flex items-center gap-2">
+            <Wrench className="h-5 w-5 text-[#003053] dark:text-white" />
+            <span className="font-bold text-sm">Since 2010</span>
           </div>
 
-          {/* Content Section */}
-          <div className="space-y-6">
-            {/* Header */}
-            <div className="space-y-3">
-              <span className="inline-block px-4 py-1.5 text-xs font-bold tracking-wider text-[#003053] bg-[#003053]/10 rounded-full uppercase dark:text-white dark:bg-white/10">
-                ABOUT OUR COMPANY
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                Dubai's Premier <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003053] to-[#0066CC]">Car Care</span> Experts
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300">
-                <span className="font-semibold text-[#003053] dark:text-white">24 Car Service Dubai</span> delivers exceptional automotive services with honesty, expertise, and 24/7 availability across all Emirates.
-              </p>
-            </div>
-
-            {/* Features Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {features.map((feature, index) => (
-                <div 
-                  key={index}
-                  className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-[#003053]/30 dark:hover:border-[#003053] transition-all hover:shadow-md"
-                >
-                  <div className={`p-2.5 rounded-lg ${feature.color}/10 mb-3`}>
-                    <div className={feature.color}>
-                      {feature.icon}
-                    </div>
-                  </div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white">{feature.title}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Mission Statement */}
-            <div className="p-6 rounded-xl bg-gradient-to-br from-[#003053]/5 to-[#0066CC]/5 border border-[#003053]/20 dark:border-[#003053]/30">
-              <div className="flex items-start gap-3">
-                <CheckCircle className="h-5 w-5 text-[#003053] dark:text-white mt-0.5 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white">Our Commitment</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mt-1">
-                    "To provide unparalleled automotive services with immediate, reliable, and professional assistance that keeps Dubai moving safely."
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Button 
-                className="h-12 px-6 bg-[#003053] hover:bg-[#002244] text-white shadow-lg hover:shadow-xl"
-                size="lg"
-              >
-                Meet Our Technicians
-              </Button>
-              <Button 
-                variant="outline"
-                className="h-12 px-6 border-[#003053] text-[#003053] hover:bg-[#003053]/10 dark:border-white dark:text-white dark:hover:bg-white/10"
-                size="lg"
-              >
-                Our Service Promise
-              </Button>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4 sm:p-6">
+            <div className="text-white">
+              <p className="text-sm font-medium">Our certified technicians</p>
+              <h3 className="text-lg sm:text-xl font-bold mt-1">Ready to Serve You 24/7</h3>
             </div>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Content Section */}
+      <div className="space-y-6">
+        {/* Header */}
+        <div className="space-y-3">
+          <span className="inline-block px-4 py-1.5 text-xs font-bold tracking-wider text-[#003053] bg-[#003053]/10 rounded-full uppercase dark:text-white dark:bg-white/10">
+            ABOUT OUR COMPANY
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+            Dubai's Premier <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003053] to-[#0066CC]">Car Care</span> Experts
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300">
+            <span className="font-semibold text-[#003053] dark:text-white">24 Car Service Dubai</span> delivers exceptional automotive services with honesty, expertise, and 24/7 availability across all Emirates.
+          </p>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {features.map((feature, index) => (
+            <div 
+              key={index}
+              className="p-4 rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-[#003053]/30 dark:hover:border-[#003053] transition-all hover:shadow-md"
+            >
+              <div className={`p-2.5 rounded-lg ${feature.color}/10 mb-3`}>
+                <div className={feature.color}>
+                  {feature.icon}
+                </div>
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white">{feature.title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Mission Statement */}
+        <div className="p-6 rounded-xl bg-gradient-to-br from-[#003053]/5 to-[#0066CC]/5 border border-[#003053]/20 dark:border-[#003053]/30">
+          <div className="flex items-start gap-3">
+            <CheckCircle className="h-5 w-5 text-[#003053] dark:text-white mt-0.5 flex-shrink-0" />
+            <div>
+              <h3 className="font-semibold text-gray-900 dark:text-white">Our Commitment</h3>
+              <p className="text-gray-600 dark:text-gray-300 mt-1">
+                "To provide unparalleled automotive services with immediate, reliable, and professional assistance that keeps Dubai moving safely."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-3 pt-2">
+          <Button 
+            className="h-12 px-6 bg-[#003053] hover:bg-[#002244] text-white shadow-lg hover:shadow-xl"
+            size="lg"
+          >
+            Meet Our Technicians
+          </Button>
+          <Button 
+            variant="outline"
+            className="h-12 px-6 border-[#003053] text-[#003053] hover:bg-[#003053]/10 dark:border-white dark:text-white dark:hover:bg-white/10"
+            size="lg"
+          >
+            Our Service Promise
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
   );
 }

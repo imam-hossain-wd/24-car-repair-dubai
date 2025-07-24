@@ -5,6 +5,7 @@ import { CalendarCheck, Car, CheckCircle, Clock, Phone, ShieldCheck, Users, Wren
 import Head from "next/head";
 import Image from "next/image";
 import aboutimage from '../../assets/images/gallery-2.jpg'
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -19,36 +20,39 @@ export default function AboutPage() {
 
       {/* Hero Section */}
       {/* <section className="relative h-[320px]  w-full bg-gradient-to-br from-emerald-500 to-teal-600 overflow-hidden"> */}
-<section className="relative h-[400px] sm:h-[450px] md:h-[550px] w-full bg-gradient-to-br from-[#003053] to-[#0066CC] overflow-hidden">
-  {/* Decorative elements - responsive sizes */}
+<section className="relative min-h-[320px] sm:min-h-[380px] md:min-h-[450px] w-full bg-gradient-to-br from-[#003053] to-[#0066CC] overflow-hidden">
+  {/* Decorative elements */}
   <div className="absolute inset-0 opacity-10 bg-[url('/images/dot-grid-pattern.svg')] bg-cover md:bg-auto"></div>
   <div className="absolute top-0 right-0 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] bg-[#B91C1C]/10 rounded-full blur-xl sm:blur-2xl md:blur-3xl -mr-32 sm:-mr-40 md:-mr-60 -mt-32 sm:-mt-40 md:-mt-60"></div>
   <div className="absolute bottom-0 left-0 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] bg-white/5 rounded-full blur-xl sm:blur-2xl md:blur-3xl -ml-20 sm:-ml-30 md:-ml-40 -mb-20 sm:-mb-30 md:-mb-40"></div>
 
-  {/* Content container */}
-  <div className="container h-full mx-auto px-4 sm:px-6 flex flex-col justify-center items-center text-center relative z-10">
-    {/* Trust badge - responsive sizing */}
-    <div className="mb-2 sm:mb-4 md:mb-3 px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 bg-white/20 backdrop-blur-sm md:backdrop-blur-md rounded-full border border-white/30 inline-flex items-center gap-2 sm:gap-3 animate-fade-in">
-      <div className="flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white">
-        <ShieldCheck className="w-3 h-3 sm:w-4 sm:h-4 text-[#003053]" />
+  {/* Content */}
+  <div className="container h-full mx-auto px-4 sm:px-6 flex flex-col justify-center items-center text-center relative z-10 py-10 sm:py-12 md:py-14">
+    
+    {/* Badge */}
+    <div className="mb-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 inline-flex items-center gap-2 animate-fade-in">
+      <div className="flex items-center justify-center w-5 h-5 rounded-full bg-white">
+        <ShieldCheck className="w-3 h-3 text-[#003053]" />
       </div>
-      <span className="text-white text-xs sm:text-sm font-medium tracking-wide sm:tracking-wider">TRUSTED IN DUBAI SINCE 2010</span>
+      <span className="text-white text-xs sm:text-sm font-medium tracking-wide">TRUSTED IN DUBAI SINCE 2010</span>
     </div>
-    
-    {/* Main heading - responsive sizing */}
-    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold text-white mb-4 sm:mb-4 md:mb-6 leading-snug sm:leading-tight max-w-4xl">
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-white">24 Car Service Dubai</span><br className="hidden sm:block" />
-      <div className="text-4xl">
-        <span className="text-white">Your Trusted</span> <span className="underline decoration-amber-400 decoration-2 sm:decoration-3 underline-offset-4 sm:underline-offset-8">Automotive Partner</span>
-      </div>
+
+    {/* Heading */}
+    <h1 className=" font-bold text-white my-4 sm:mb-3 leading-snug max-w-3xl">
+      <span className="text-transparent text-2xl sm:text-3xl md:text-4xl lg:text-5xl my-2 bg-clip-text bg-gradient-to-r from-amber-300 to-white">24 Car Service Dubai</span>
+      <br />
+      <span className="text-xl sm:text-2xl md:text-4xl mt-1 block">
+        <span className="text-white">Your Trusted </span>
+        <span className="underline decoration-amber-400 decoration-2 underline-offset-4">Automotive Partner</span>
+      </span>
     </h1>
-    
-    {/* Subheading - responsive sizing */}
-    <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-4 sm:mb-6 md:mb-6 px-2">
+
+    {/* Subheading */}
+    <p className="text-sm sm:text-base text-white/90 max-w-md mx-auto mb-5 px-2">
       Premium 24/7 mobile car services with certified technicians and transparent pricing across all Dubai
     </p>
-    
-    {/* Action buttons - responsive stacking */}
+
+    {/* Action Buttons - side-by-side, linked */}
     <div className="flex  sm:flex-row gap-2 sm:gap-3 md:gap-4 w-full sm:w-auto justify-center">
       <Button 
         className="h-10 sm:h-12 md:h-12 px-4 sm:px-6 md:px-8 bg-amber-400 hover:bg-amber-500 text-[#003053] text-sm sm:text-base md:text-lg font-semibold shadow-md hover:shadow-lg transition-all"
@@ -67,40 +71,30 @@ export default function AboutPage() {
       </Button>
     </div>
 
-    {/* Stats grid - responsive layout */}
-    <div className="mt-6 sm:mt-8 md:mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-4 w-full max-w-4xl">
+    {/* Stats - compact and responsive */}
+    {/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-3xl">
       {[
-        { value: "15+", label: "Years Experience", icon: <CalendarCheck className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" /> },
-        { value: "10K+", label: "Cars Serviced", icon: <Car className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" /> },
-        { value: "50+", label: "Certified Techs", icon: <Users className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" /> },
-        { value: "24/7", label: "Availability", icon: <Clock className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" /> }
-      ].map((stat, index) => (
+        { value: "15+", label: "Years", icon: <CalendarCheck className="h-4 w-4 sm:h-5 sm:w-5 text-amber-300" /> },
+        { value: "10K+", label: "Cars", icon: <Car className="h-4 w-4 sm:h-5 sm:w-5 text-amber-300" /> },
+        { value: "50+", label: "Techs", icon: <Users className="h-4 w-4 sm:h-5 sm:w-5 text-amber-300" /> },
+        { value: "24/7", label: "Service", icon: <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-amber-300" /> }
+      ].map((stat, i) => (
         <div 
-          key={index} 
-          className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 border border-white/20 hover:border-amber-400/50 transition-colors"
+          key={i} 
+          className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20 hover:border-amber-400/50 transition-colors text-center"
         >
-          <div className="flex flex-col items-center gap-1 sm:gap-2">
-            <div className="text-amber-300">{stat.icon}</div>
-            <span className="text-lg sm:text-xl md:text-xl font-bold text-white">{stat.value}</span>
-            <span className="text-xs sm:text-sm text-white/80">{stat.label}</span>
+          <div className="flex flex-col items-center gap-1">
+            {stat.icon}
+            <span className="text-base sm:text-lg font-bold text-white">{stat.value}</span>
+            <span className="text-xs text-white/80">{stat.label}</span>
           </div>
         </div>
       ))}
-    </div>
+    </div> */}
   </div>
-
-  {/* Floating mechanic illustration - responsive positioning */}
-  {/* <div className="absolute bottom-0 right-0 w-1/2 h-[150px] sm:h-[200px] md:h-[250px] lg:h-[300px] rounded-tl-2xl overflow-hidden opacity-70 md:opacity-100">
-    <Image
-      src={aboutimage}
-      alt="24 Car Service mechanic"
-      fill
-      className="object-contain object-right-bottom"
-      priority
-      sizes="(max-width: 640px) 50vw, (max-width: 768px) 40vw, 30vw"
-    />
-  </div> */}
 </section>
+
+
 
       {/* Who We Are Section */}
 <WhoWeAre />

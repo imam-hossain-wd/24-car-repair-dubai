@@ -1,5 +1,6 @@
-'use client'
 
+
+'use client'
 import { services } from "@/data/services";
 import ServiceCard from "@/components/view/Card/ServiceCard";
 
@@ -8,9 +9,24 @@ export default function ServicePage() {
   return (
     <div>
 
-      <div className="container py-12 mx-auto">
+      <div className="bg-primary text-center py-10 md:py-20">
+
+        <h1 className="text-3xl md:text-5xl mb-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-300">
+          Premium <span>Auto Care</span> Services
+        </h1>
+        <p className=" md:text-lg text-gray-300 mb-8">
+          Expert vehicle maintenance and repair services in Dubai with 24/7 availability
+        </p>
+
+
+      </div>
+
+      {/* Services Grid Section */}
+      <div className="container py-12 mx-auto px-4">
         <div className="mb-12 text-center">
-          <h1 className="text-4xl font-bold tracking-tight">Our Services</h1>
+          <h2 className="text-3xl font-bold tracking-tight text-[var(--brand-navy)]">
+            Our Comprehensive Services
+          </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Professional automotive services tailored to your needs
           </p>

@@ -1,6 +1,5 @@
 
 import GetTouch from '@/components/view/GetTouch/GetTouch'
-import { getContactPageSchema } from '@/schemas/contactPageSchema'
 import { SeoHead } from '@/seo/SeoHead'
 import MapComponent from '@/components/ui/shared/Map/MapComponent'
 import ServiceAreas from '@/components/view/ServiceArea/ServiceAreas'
@@ -13,7 +12,7 @@ export default function ContactPage() {
   const pageKeywords = "contact car repair Dubai, mobile mechanic phone number, 24/7 roadside assistance, emergency car service contact Dubai";
   const pageCanonical = "https://24CarServiceDubai.com/contact";
 
-  const contactPageSchema = getContactPageSchema();
+  
 
   return (
     <div>
@@ -21,8 +20,7 @@ export default function ContactPage() {
         title={pageTitle}
         description={pageDescription}
         keywords={pageKeywords}
-        canonicalUrl={pageCanonical}
-        schema={contactPageSchema}
+        canonicalUrl={pageCanonical} 
       />
 
       <div className="bg-white">

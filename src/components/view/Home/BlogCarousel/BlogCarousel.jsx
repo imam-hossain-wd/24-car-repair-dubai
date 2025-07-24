@@ -5,11 +5,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import blogData from '@/data/blogData';
 import Image from 'next/image';
 import Link from 'next/link';
+import { blogs } from '@/data/blogdata';
 
-export default function HomeBlogCarousel() {
+export default function BlogCarousel() {
   return (
     <section className="py-16 bg-white dark:bg-[#1F2937]">
       <div className="container mx-auto px-4">
@@ -46,7 +46,7 @@ export default function HomeBlogCarousel() {
             }}
             className="pb-12"
           >
-            {blogData.blogs.map((blog) => (
+            {blogs.map((blog) => (
               <SwiperSlide key={blog.id}>
                 <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 h-full border border-gray-100 dark:border-gray-700 overflow-hidden group">
                   <div className="relative h-48 overflow-hidden">

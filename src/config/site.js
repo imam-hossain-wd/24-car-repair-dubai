@@ -1,4 +1,4 @@
-import { ChevronDown, Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react";
+import {  Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react";
 
 export const SiteConfig = {
   authorName: "Md Jahangir",
@@ -49,7 +49,6 @@ export const SiteConfig = {
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
     { name: "Blog", href: "/blog" },
-    { name: "Gallery", href: "/gallery" },
   ],
   footerhrefs: [
     { title: "About Us", href: "/about" },
