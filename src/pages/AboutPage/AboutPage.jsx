@@ -1,22 +1,51 @@
 import { Button } from "@/components/ui/button";
 import { TrustedService } from "@/components/view/TrustedService/TrustedService";
 import { WhoWeAre } from "@/components/view/WhoWeAre/WhoWeAre";
-import { CalendarCheck, Car, CheckCircle, Clock, Phone, ShieldCheck, Users, Wrench } from "lucide-react";
-import Head from "next/head";
-import Image from "next/image";
-import aboutimage from '../../assets/images/gallery-2.jpg'
-import Link from "next/link";
+import {  Phone, ShieldCheck,  Wrench } from "lucide-react";
+
+
+export async function generateMetadata() {
+  const headersList = headers();
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.24carrepairdubai.com';
+  const fullUrl = `${baseUrl}/about`;
+
+  return {
+    title: 'About Us | 24/7 Mobile Car Repair Dubai',
+    description: 'Learn more about 24/7 Mobile Car Repair Dubai – your trusted provider of on-site auto repair services across Dubai. Discover our mission, values, and commitment to delivering fast, reliable, and professional car maintenance and emergency assistance.',
+    keywords: ['about 24/7 car repair Dubai', 'mobile auto service company', 'Dubai car repair mission', 'our values car service', 'trusted car repair Dubai'],
+    alternates: {
+      canonical: fullUrl,
+    },
+    robots: 'index, follow',
+    openGraph: {
+      title: 'About Us | 24/7 Mobile Car Repair Dubai',
+      description: 'Learn about our mission, values, and commitment to fast, reliable, and professional mobile car repair services in Dubai.',
+      url: fullUrl,
+      siteName: '24 Car Repair Dubai',
+      images: [
+        {
+          url: `${baseUrl}/images/og-about-image.jpg`, // Replace with your actual OG image path for about page
+          width: 1200,
+          height: 630,
+          alt: 'About 24/7 Mobile Car Repair Dubai',
+        },
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'About Us | 24/7 Mobile Car Repair Dubai',
+      description: 'Learn about our mission, values, and commitment to fast, reliable, and professional mobile car repair services in Dubai.',
+      images: [`${baseUrl}/images/twitter-about-image.jpg`],
+    },
+  };
+}
 
 export default function AboutPage() {
   return (
     <>
-      <Head>
-        <title>About Us | 24CarServiceDubai</title>
-        <meta
-          name="description"
-          content="Learn more about 24CarServiceDubai – your trusted partner for automotive care in Dubai. Meet our team, understand our mission, and explore our award-winning services."
-        />
-      </Head>
+     
 
       {/* Hero Section */}
       {/* <section className="relative h-[320px]  w-full bg-gradient-to-br from-emerald-500 to-teal-600 overflow-hidden"> */}

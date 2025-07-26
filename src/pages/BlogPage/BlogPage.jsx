@@ -5,6 +5,47 @@ import Image from "next/image";
 import { CalendarDays, Clock, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+
+export async function generateMetadata() {
+  const headersList = headers();
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.24carrepairdubai.com';
+  const fullUrl = `${baseUrl}/blog`;
+
+  return {
+    title: 'Blog | Car Maintenance Tips & Guides | 24/7 Mobile Car Repair Dubai',
+    description: 'Explore our blog for expert car maintenance tips, repair guides, automotive news, and advice for Dubai drivers. Stay informed on how to keep your vehicle in top condition with 24/7 Mobile Car Repair Dubai.',
+    keywords: ['car maintenance tips', 'car repair guides', 'automotive news Dubai', 'Dubai car care blog', 'vehicle health advice', 'mobile car repair blog'],
+    alternates: {
+      canonical: fullUrl,
+    },
+    robots: 'index, follow',
+    openGraph: {
+      title: 'Blog | Car Maintenance Tips & Guides | 24/7 Mobile Car Repair Dubai',
+      description: 'Discover expert tips, repair guides, and automotive news for Dubai drivers on the 24/7 Mobile Car Repair Dubai blog.',
+      url: fullUrl,
+      siteName: '24 Car Repair Dubai',
+      images: [
+        {
+          url: `${baseUrl}/images/og-blog-image.jpg`, 
+          width: 1200,
+          height: 630,
+          alt: 'Car Maintenance Blog',
+        },
+      ],
+      locale: 'en_US',
+      type: 'website', 
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Blog | Car Maintenance Tips & Guides | 24/7 Mobile Car Repair Dubai',
+      description: 'Discover expert tips, repair guides, and automotive news for Dubai drivers on the 24/7 Mobile Car Repair Dubai blog.',
+      images: [`${baseUrl}/images/twitter-blog-image.jpg`],
+    },
+  };
+}
+
+
+
 export default function BlogPage() {
   return (
     <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen dark:bg-gray-900">

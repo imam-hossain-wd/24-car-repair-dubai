@@ -1,70 +1,61 @@
-// components/schemas/LocalBusinessSchema.tsx
-import { SiteConfig } from "@/config/site-config"; // Adjust path as needed
-import Script from "next/script";
+import { JsonLd } from "@/lib/jsonLd";
 
-export function LocalBusinessSchema() {
-  const {
-    brandName,
-    url,
-    email,
-    phoneNumber,
-    location,
-    cordinate,
-    description,
-  } = SiteConfig;
 
-  // Extract latitude and longitude from cordinate string
-  const [latitude, longitude] = cordinate.split(",").map(Number);
-
-  const localBusinessSchema = {
+export default function LocalBusinessSchema() {
+  const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: brandName,
-    image: `${url}/images/logo.png`, // Replace with your actual logo URL
-    "@id": url,
-    url: url,
-    telephone: phoneNumber,
-    email: email,
-    address: {
+    "@type": "AutomotiveRepair", // A more specific type than general LocalBusiness
+    "@id": "https://24carrepairdubai.com/#localbusiness",
+    "name": "24 Car Repair Dubai",
+    "url": "https://24carrepairdubai.com/",
+    "image": "https://24carrepairdubai.com/images/24car-repair-business-image.jpg", // <--- UPDATE with your actual business image
+    "telephone": "+971 50 669 5990",
+    "email": "contact@24carrepairdubai.com",
+    "address": {
       "@type": "PostalAddress",
-      streetAddress: location.split(",")[0].trim(), // "Al Satwa"
-      addressLocality: location.split(",")[1].trim(), // "Dubai"
-      addressRegion: "Dubai", // Assuming Dubai is the region
-      postalCode: "", // Add if you have one
-      addressCountry: "AE", // United Arab Emirates
+      "streetAddress": "Business Bay",
+      "addressLocality": "Dubai",
+      "addressRegion": "Dubai",
+      "addressCountry": "UAE"
     },
-    geo: {
+    "geo": {
       "@type": "GeoCoordinates",
-      latitude: latitude,
-      longitude: longitude,
+      "latitude": 25.2256355,
+      "longitude": 55.1905546
     },
-    openingHoursSpecification: [
+    "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday",
-        ], 
-        opens: "00:00",
-        closes: "23:59",
-      },
+        "dayOfWeek": [
+          "https://schema.org/Monday",
+          "https://schema.org/Tuesday",
+          "https://schema.org/Wednesday",
+          "https://schema.org/Thursday",
+          "https://schema.org/Friday",
+          "https://schema.org/Saturday",
+          "https://schema.org/Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
     ],
-    priceRange: "$$", // Example: Adjust based on your pricing
-    description: description,
-    // Add sameAs for social media links if desired
-    sameAs: SiteConfig.socialLinks.map((link) => link.href),
+    "priceRange": "$$", // Example: You can use "$", "$$", "$$$"
+    "areaServed": [
+      { "@type": "Place", "name": "Business Bay, Dubai" },
+      { "@type": "Place", "name": "Jumeirah, Dubai" },
+      { "@type": "Place", "name": "Jumeirah 2 Dubai" },
+      { "@type": "Place", "name": "Al Barsha, Dubai" }
+    ],
+    "serviceType": [ // List of services provided
+      "Car Battery Replacement Dubai",
+      "Car Brake Pad Repair Dubai",
+      "Engine Oil Change Dubai",
+      "Air Conditioner Repair Dubai",
+      "Car Radiator Service Dubai",
+      "Gearbox Repair & Service Dubai",
+      "Car Maintenance"
+    ]
   };
 
-  return (
-    <Script
-      id="local-business-schema"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-    />
-  );
+  return <JsonLd data={schema} />;
 }

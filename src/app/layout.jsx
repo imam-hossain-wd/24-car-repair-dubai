@@ -11,6 +11,9 @@ import { Navbar } from "@/components/ui/shared/Navbar/Navbar";
 import { FloatingButtons } from "@/components/ui/shared/Buttons/FloatingButtons/FloatingButtons";
 import Head from "next/head";
 import Script from "next/script";
+import OrganizationSchema from "@/components/Schemas/OrganizationSchema";
+import WebsiteSchema from "@/components/Schemas/WebsiteSchema";
+import LocalBusinessSchema from "@/components/Schemas/LocalBusinessSchema";
 // import { FloatingButtons } from "@/components/ui/shared/Buttons/FloatingButtons/FloatingButtons";
 // import { MobileBottomNav } from "@/components/ui/shared/Navbar/MobileBottomNav";
 
@@ -25,8 +28,6 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Premium Car Repair Across Dubai || 24 Car Repair Dubai",
-  description: "One of the best car repair and servicing company in dubai || 24 Car Repair Dubai",
   verification: {
     google: "NlI4dow02YyoBrkiYB1LPx4pXesSILADHN7vEms7yMM"
   }
@@ -62,6 +63,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+
+      <OrganizationSchema />
+      <WebsiteSchema />
+      <LocalBusinessSchema />
 
         <div>
           <Navbar />

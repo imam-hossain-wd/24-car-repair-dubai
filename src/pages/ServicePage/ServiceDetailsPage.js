@@ -1,410 +1,3 @@
-
-// import { services } from '@/data/services';
-// import Image from 'next/image';
-// import Link from 'next/link';
-// import {
-//   Battery,
-//   Check,
-//   Clock,
-//   Shield,
-//   MapPin,
-//   Phone,
-//   ChevronRight,
-//   CalendarCheck,
-//   Star,
-//   Zap,
-//   Wrench,
-
-// } from 'lucide-react';
-// import ServiceCard from '@/components/view/Card/ServiceCard';
-
-
-// const currentService = services.find(s => s.slug === 'car-battery-replacement-dubai');
-// const otherServices = services.filter(s => s.slug !== 'car-battery-replacement-dubai').slice(0, 4);
-
-// export default function BatteryServicePage() {
-//   return (
-//     <div className="bg-white dark:bg-gray-900">
-//       {/* Hero Section */}
-//       <section className="relative py-16 md:py-24 bg-primary">
-//         <div className="absolute inset-0 opacity-10 bg-[url('/grid-pattern.svg')]"></div>
-//         <div className="container px-4 mx-auto relative z-10">
-//           <div className="max-w-3xl">
-//             <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium mb-4">
-//               <Star className="h-4 w-4 mr-2" />
-//               Premium Dubai Service
-//             </div>
-            
-//             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-//               {currentService.title}
-//             </h1>
-            
-//             <p className="text-xl text-white/90 mb-8 max-w-2xl">
-//               {currentService.intro.subheading}
-//             </p>
-            
-//             <div className="flex flex-col sm:flex-row gap-4">
-//               <Link 
-//                 href="/booking"
-//                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-800 font-medium rounded-lg hover:bg-white/90 transition-colors"
-//               >
-//                 <Phone className="h-5 w-5" />
-//                 {currentService.ctaSection.buttonText}
-//               </Link>
-//               <Link 
-//                 href="#service-details"
-//                 className="inline-flex items-center justify-center gap-2 px-6 py-3 text-white font-medium rounded-lg border border-white/30 hover:bg-white/10 transition-colors"
-//               >
-//                 Learn More
-//                 <ChevronRight className="h-5 w-5" />
-//               </Link>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Service Overview */}
-//       <section id="service-details" className="py-12 md:py-16 bg-white dark:bg-gray-900">
-//         <div className="container px-4 mx-auto">
-//           <div className="flex flex-col lg:flex-row gap-8">
-//             {/* Main Content */}
-//             <div className="lg:w-2/3">
-//               {/* Service Highlights */}
-//               <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700 mb-12">
-//                 <div className="grid grid-cols-1 md:grid-cols-2">
-//                   <div className="p-8">
-//                     <div className="flex items-center gap-4 mb-6">
-//                       <div className="p-3 rounded-full bg-primary text-blue-600 dark:text-blue-400">
-//                         <Battery className="h-6 w-6" />
-//                       </div>
-//                       <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-//                         {currentService.intro.heading}
-//                       </h2>
-//                     </div>
-                    
-//                     <p className="text-gray-600 dark:text-gray-300 mb-8">
-//                       {currentService.intro.content}
-//                     </p>
-                    
-//                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-//                       {currentService.features.map((feature, index) => (
-//                         <div key={index} className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/30 rounded-lg">
-//                           <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-//                           <p className="text-gray-700 dark:text-gray-300">{feature}</p>
-//                         </div>
-//                       ))}
-//                     </div>
-//                   </div>
-                  
-//                   <div className="bg-gray-50 dark:bg-gray-800 p-8 border-t md:border-t-0 md:border-l border-gray-100 dark:border-gray-700">
-//                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-//                       Service Highlights
-//                     </h3>
-                    
-//                     <ul className="space-y-4 mb-8">
-//                       <li className="flex items-start gap-3">
-//                         <div className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
-//                           <Clock className="h-5 w-5" />
-//                         </div>
-//                         <div>
-//                           <h4 className="font-medium text-gray-900 dark:text-white">Service Duration</h4>
-//                           <p className="text-sm text-gray-600 dark:text-gray-400">30-45 minutes average</p>
-//                         </div>
-//                       </li>
-//                       <li className="flex items-start gap-3">
-//                         <div className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
-//                           <Shield className="h-5 w-5" />
-//                         </div>
-//                         <div>
-//                           <h4 className="font-medium text-gray-900 dark:text-white">Warranty</h4>
-//                           <p className="text-sm text-gray-600 dark:text-gray-400">24-month battery warranty</p>
-//                         </div>
-//                       </li>
-//                       <li className="flex items-start gap-3">
-//                         <div className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
-//                           <Zap className="h-5 w-5" />
-//                         </div>
-//                         <div>
-//                           <h4 className="font-medium text-gray-900 dark:text-white">Battery Brands</h4>
-//                           <p className="text-sm text-gray-600 dark:text-gray-400">Bosch, Varta, Amaron</p>
-//                         </div>
-//                       </li>
-//                       <li className="flex items-start gap-3">
-//                         <div className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
-//                           <MapPin className="h-5 w-5" />
-//                         </div>
-//                         <div>
-//                           <h4 className="font-medium text-gray-900 dark:text-white">Coverage</h4>
-//                           <p className="text-sm text-gray-600 dark:text-gray-400">All Dubai areas, 24/7</p>
-//                         </div>
-//                       </li>
-//                     </ul>
-                    
-//                     <Link
-//                       href="/booking"
-//                       className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary text-white font-medium rounded-lg transition-colors"
-//                     >
-//                       <CalendarCheck className="h-5 w-5" />
-//                       Book Battery Replacement
-//                     </Link>
-//                   </div>
-//                 </div>
-//               </div>
-
-//               {/* Why Choose Us */}
-//               <div className="mb-16">
-//                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-//                   Why Choose Our Battery Replacement Service?
-//                 </h2>
-                
-//                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//                   <div className="p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 transition-all shadow-sm hover:shadow-md">
-//                     <div className="flex items-start gap-4">
-//                       <div className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex-shrink-0">
-//                         <Wrench className="h-5 w-5" />
-//                       </div>
-//                       <p className="font-medium text-gray-800 dark:text-gray-200">
-//                         Mobile service - we come to your location anywhere in Dubai
-//                       </p>
-//                     </div>
-//                   </div>
-//                   <div className="p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 transition-all shadow-sm hover:shadow-md">
-//                     <div className="flex items-start gap-4">
-//                       <div className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex-shrink-0">
-//                         <Shield className="h-5 w-5" />
-//                       </div>
-//                       <p className="font-medium text-gray-800 dark:text-gray-200">
-//                         Certified technicians with extensive battery expertise
-//                       </p>
-//                     </div>
-//                   </div>
-//                   <div className="p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 transition-all shadow-sm hover:shadow-md">
-//                     <div className="flex items-start gap-4">
-//                       <div className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex-shrink-0">
-//                         <Zap className="h-5 w-5" />
-//                       </div>
-//                       <p className="font-medium text-gray-800 dark:text-gray-200">
-//                         Premium batteries from top brands with manufacturer warranty
-//                       </p>
-//                     </div>
-//                   </div>
-//                   <div className="p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 transition-all shadow-sm hover:shadow-md">
-//                     <div className="flex items-start gap-4">
-//                       <div className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex-shrink-0">
-//                         <Clock className="h-5 w-5" />
-//                       </div>
-//                       <p className="font-medium text-gray-800 dark:text-gray-200">
-//                         Fast response - most battery replacements completed within 1 hour
-//                       </p>
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>
-
-//               {/* Our Process */}
-//               <div className="mb-16">
-//                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-//                   Our Battery Replacement Process
-//                 </h2>
-                
-//                 <div className="relative">
-//                   <div className="absolute left-6 top-0 h-full w-0.5 bg-gradient-to-b from-blue-500 to-transparent dark:from-blue-400 dark:to-transparent" />
-                  
-//                   <div className="space-y-8">
-//                     <div className="relative pl-16">
-//                       <div className="absolute left-0 top-1 flex items-center justify-center w-12 h-12 rounded-full bg-primary  text-white font-bold border-4 border-white dark:border-gray-900">
-//                         1
-//                       </div>
-//                       <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
-//                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-//                           Battery Diagnosis
-//                         </h3>
-//                         <p className="text-gray-600 dark:text-gray-400">
-//                           Our technician performs a comprehensive battery test to confirm replacement is needed.
-//                         </p>
-//                       </div>
-//                     </div>
-//                     <div className="relative pl-16">
-//                       <div className="absolute left-0 top-1 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white font-bold border-4 border-white dark:border-gray-900">
-//                         2
-//                       </div>
-//                       <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
-//                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-//                           Battery Selection
-//                         </h3>
-//                         <p className="text-gray-600 dark:text-gray-400">
-//                           We help you choose the right battery for your vehicle and budget from our premium selection.
-//                         </p>
-//                       </div>
-//                     </div>
-//                     <div className="relative pl-16">
-//                       <div className="absolute left-0 top-1 flex items-center justify-center w-12 h-12 rounded-full bg-primary  text-white font-bold border-4 border-white dark:border-gray-900">
-//                         3
-//                       </div>
-//                       <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
-//                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-//                           Professional Installation
-//                         </h3>
-//                         <p className="text-gray-600 dark:text-gray-400">
-//                           Our expert safely removes the old battery and installs the new one with proper connections.
-//                         </p>
-//                       </div>
-//                     </div>
-//                     <div className="relative pl-16">
-//                       <div className="absolute left-0 top-1 flex items-center justify-center w-12 h-12 rounded-full bg-primary  text-white font-bold border-4 border-white dark:border-gray-900">
-//                         4
-//                       </div>
-//                       <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
-//                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-//                           System Testing
-//                         </h3>
-//                         <p className="text-gray-600 dark:text-gray-400">
-//                           We test the electrical system and provide warranty documentation before completion.
-//                         </p>
-//                       </div>
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>
-
-//               {/* FAQ */}
-//               <div className="mb-16">
-//                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-//                   Battery Service FAQs
-//                 </h2>
-                
-//                 <div className="space-y-4">
-//                   <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-//                     <details className="group">
-//                       <summary className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800 cursor-pointer list-none">
-//                         <h3 className="font-medium text-gray-900 dark:text-white">
-//                           How often should I replace my car battery in Dubai?
-//                         </h3>
-//                         <ChevronRight className="h-5 w-5 text-gray-400 group-open:rotate-90 transition-transform" />
-//                       </summary>
-//                       <div className="p-4 pt-0 text-gray-600 dark:text-gray-400">
-//                         In Dubai's hot climate, car batteries typically last 2-3 years. We recommend replacing your battery every 2 years to avoid unexpected failures.
-//                       </div>
-//                     </details>
-//                   </div>
-//                   <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-//                     <details className="group">
-//                       <summary className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800 cursor-pointer list-none">
-//                         <h3 className="font-medium text-gray-900 dark:text-white">
-//                           What battery brands do you use?
-//                         </h3>
-//                         <ChevronRight className="h-5 w-5 text-gray-400 group-open:rotate-90 transition-transform" />
-//                       </summary>
-//                       <div className="p-4 pt-0 text-gray-600 dark:text-gray-400">
-//                         We use premium batteries from top brands like Bosch, Varta, Amaron, and AC Delco. All come with manufacturer warranties.
-//                       </div>
-//                     </details>
-//                   </div>
-//                   <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-//                     <details className="group">
-//                       <summary className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800 cursor-pointer list-none">
-//                         <h3 className="font-medium text-gray-900 dark:text-white">
-//                           Can you replace my battery at night or on weekends?
-//                         </h3>
-//                         <ChevronRight className="h-5 w-5 text-gray-400 group-open:rotate-90 transition-transform" />
-//                       </summary>
-//                       <div className="p-4 pt-0 text-gray-600 dark:text-gray-400">
-//                         Yes! We provide 24/7 battery replacement service in Dubai, including nights, weekends, and holidays.
-//                       </div>
-//                     </details>
-//                   </div>
-//                   <div className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
-//                     <details className="group">
-//                       <summary className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800 cursor-pointer list-none">
-//                         <h3 className="font-medium text-gray-900 dark:text-white">
-//                           Will I lose my radio presets when replacing the battery?
-//                         </h3>
-//                         <ChevronRight className="h-5 w-5 text-gray-400 group-open:rotate-90 transition-transform" />
-//                       </summary>
-//                       <div className="p-4 pt-0 text-gray-600 dark:text-gray-400">
-//                         Our technicians use memory savers to preserve your radio presets and electronic settings during battery replacement.
-//                       </div>
-//                     </details>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-
-//             {/* Sidebar */}
-//             <div className="lg:w-1/3 space-y-6">
-//               {/* Service Coverage */}
-//               <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 overflow-hidden">
-//                 <div className="p-6 border-b border-gray-200 dark:border-gray-700">
-//                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-//                     <MapPin className="h-5 w-5 text-blue-600 dark:text-blue-400" />
-//                     Service Coverage Areas
-//                   </h3>
-//                 </div>
-//                 <div className="p-6">
-//                   <div className="space-y-3">
-//                     {['Downtown Dubai', 'Dubai Marina', 'Jumeirah', 'Business Bay', 'Al Quoz', 'Al Barsha', 'Deira', 'International City'].map((location, index) => (
-//                       <div key={index} className="flex items-center gap-3">
-//                         <div className="flex-shrink-0 w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400" />
-//                         <span className="text-sm text-gray-700 dark:text-gray-300">
-//                           {location}
-//                         </span>
-//                       </div>
-//                     ))}
-//                   </div>
-//                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
-//                     We cover all areas of Dubai with our mobile battery replacement service.
-//                   </p>
-//                 </div>
-//               </div>
-
-//               {/* Emergency CTA */}
-//               <div className="bg-primary rounded-xl shadow-lg overflow-hidden border-0">
-//                 <div className="p-6">
-//                   <h3 className="text-xl font-semibold text-white mb-2">
-//                     Emergency Battery Service?
-//                   </h3>
-//                   <p className="text-white/90 mb-6">
-//                     Call now for immediate assistance with your dead battery.
-//                   </p>
-//                   <Link
-//                     href="tel:+971506695990"
-//                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-blue-700 font-medium rounded-lg transition-colors hover:bg-white/90"
-//                   >
-//                     <Phone className="h-5 w-5" />
-//                     Call +971 50 669 5990
-//                   </Link>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Related Services */}
-//       <section className="py-16 bg-primary/10">
-//         <div className="container px-4 mx-auto">
-//           <div className="text-center mb-12">
-//             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-//               Other Car Services You Might Need
-//             </h2>
-//             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-//               Complete car care solutions for Dubai drivers
-//             </p>
-//           </div>
-          
-//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-//             {otherServices.map((service) => (
-//               <ServiceCard key={service.slug} service={service} />
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// }
-
-
-
 import { services } from '@/data/services';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -418,7 +11,6 @@ import {
   ChevronRight,
   CalendarCheck,
   Star,
-  Zap,
   Wrench,
   ArrowRight,
   Car,
@@ -431,13 +23,55 @@ import {
 } from 'lucide-react';
 import ServiceCard from '@/components/view/Card/ServiceCard';
 import NotFound from '@/app/not-found';
+import ServiceSchema from '@/components/Schemas/ServiceSchema';
 
 export async function generateMetadata({ params }) {
-  const service = services.find(s => s.slug === params.slug);
-  return {
-    title: `${service?.title} | 24/7 Mobile Car Repair Dubai`,
-    description: service?.intro.content,
+
+  const service = getServiceDataBySlug(params.slug);
+  const headersList = headers();
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.24carrepairdubai.com'; 
+  const fullUrl = `${baseUrl}/services/${params.slug}`;
+
+  if (!service) {
+    return {
+      title: 'Service Not Found | 24/7 Mobile Car Repair Dubai',
+      description: 'The requested car repair service could not be found. Please check our other services or return to the homepage.',
+      robots: 'noindex, nofollow',
+    };
   }
+
+  const combinedDescription = `${service.intro.heading}. ${service.intro.content} Key features of our ${service.title.toLowerCase()} service include: ${service.features.join('. ')}. Ensure your vehicle is in top condition with our expert mobile service in Dubai. Book now for fast and reliable car repair at your location.`;
+
+  return {
+    title: `${service.title} | 24/7 Mobile Car Repair Dubai`,
+    description: combinedDescription,
+    alternates: {
+      canonical: fullUrl, 
+    },
+    robots: 'index, follow',
+    openGraph: {
+      title: service.title,
+      description: combinedDescription,
+      url: fullUrl,
+      siteName: '24 Car Repair Dubai', 
+      images: [
+        {
+          url: service.service_image, 
+          width: 1200, 
+          height: 630,
+          alt: service.title,
+        },
+      ],
+      locale: 'en_US',
+      type: 'article', 
+    },
+    twitter: {
+      card: 'summary_large_image', 
+      title: service.title,
+      description: combinedDescription,
+      images: [service.service_image],
+    },
+  };
 }
 
 export default function ServiceDetailsPage({ slug }) {
@@ -475,6 +109,8 @@ export default function ServiceDetailsPage({ slug }) {
 
   return (
     <div className="bg-white dark:bg-gray-900">
+
+       <ServiceSchema serviceData={service} />
       {/* Hero Section with Animated Gradient */}
       <section className="relative py-16 md:py-24 bg-gradient-to-r from-primary to-primary-dark overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('/grid-pattern.svg')]"></div>
@@ -852,3 +488,5 @@ export default function ServiceDetailsPage({ slug }) {
     </div>
   );
 }
+
+

@@ -8,9 +8,9 @@ export const SiteConfig = {
   description: "Your On-Demand Car Savior Anywhere, Anytime in Dubai!",
   phoneNumber: "+971 50 669 5990",
   phoneAction: "+971506695990",
-  location: "Al Satwa , Dubai , UAE",
+  location: "Business Bay, Dubai , UAE",
   cordinate: "25.2256355,55.1905546",
-  serviceAreas: ["Al Satwa", "Jumeirah, Dubai", "Jumeirah 2 Dubai", "Al Barsha, Dubai"],
+  serviceAreas: ["Business Bay", "Jumeirah, Dubai", "Jumeirah 2 Dubai", "Al Barsha, Dubai"],
   services: [
     {
       title: "Car Battery Replacement Dubai",
@@ -72,9 +72,19 @@ export const SiteConfig = {
 
 }
 
-//  MapPin, Phone, Mail, ChevronDown
+// 24 Car Repair Dubai – Your On-Demand Car Savior, Anytime, Anywhere in Dubai
+// At 24 Car Repair Dubai, we specialize in mobile, on-demand car repair and maintenance services throughout Dubai. With no physical garage, we bring expert mechanics directly to your location—whether you're at home, at work, or stranded on the road.
 
-// estructured object version of the SiteConfig
+// From battery replacement, brake pad repair, engine oil change, and AC servicing, to gearbox repairs and routine car maintenance, we’re equipped to handle it all—right where you are.
+
+// Our mission is simple: fast, reliable, and professional car repair service at your convenience, 24 hours a day, 7 days a week.
+// Trusted by Dubai residents for our quick response, transparent pricing, and expert care, we turn breakdowns into peace of mind—without you ever needing to visit a workshop.
+
+// 🔧 Serving major areas including Al Satwa, Jumeirah, Al Barsha, and more.
+// 📍 Based in Business Bay, Dubai
+// 📞 Call us anytime: +971 50 669 5990
+
+// No queues. No delays. Just expert service—delivered wherever you are.
 
 const {
  authorName,
